@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Checkout</title>
+<script src="https://js.stripe.com/v3/"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h2 style="text-align:center">Checkout</h2>
+
+<div style="text-align:center">
+
+<p id="product"></p>
+<p id="price"></p>
+
+<button id="pay">Pay Now</button>
+
+</div>
+
+<script>
+
+let product = localStorage.getItem("product")
+let price = localStorage.getItem("price")
+
+document.getElementById("product").innerText = product
+document.getElementById("price").innerText = "₦"+price
+
+const stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY")
+
+document.getElementById("pay").onclick = function(){
+
+alert("Connect Stripe backend to complete payment.")
+
+}
+
+</script>
+
+</body>
+</html>
